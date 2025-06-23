@@ -1,0 +1,10 @@
+docker run -d \
+--name=qbittorrent-autosuperseed \
+--network=host \
+  -e QB_HOST=localhost  \
+  -e QB_PORT=8080  \
+  -e QB_USERNAME=admin  \
+  -e QB_PASSWORD=adminadmin  \
+  -e POLLING_INTERVAL_SECONDS=120  \
+--restart unless-stopped \
+ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
