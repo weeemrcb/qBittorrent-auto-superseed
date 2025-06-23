@@ -1,0 +1,13 @@
+name: qbittorrent-autosuperseed
+services:
+    qbittorrent-autosuperseed:
+        container_name: qbittorrent-autosuperseed
+        network_mode: host
+        environment:
+            - QB_HOST=localhost
+            - QB_PORT=8080
+            - QB_USERNAME=your_qb_webui_username
+            - QB_PASSWORD=your_qb_webui_password
+            - POLLING_INTERVAL_SECONDS=120
+        restart: unless-stopped
+        image: ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
