@@ -1,0 +1,14 @@
+echo
+docker stop autosuperseedtest
+docker rm autosuperseedtest
+sleep 1
+
+echo Starting autosuperseedtest
+docker run -d \
+--name=autosuperseedtest \
+--network=host \
+-e QB_HOST=localhost \
+-e QB_PORT=9412 \
+-e POLLING_INTERVAL_SECONDS=30 \
+--restart=no \
+qbittorrent-autosuperseed
