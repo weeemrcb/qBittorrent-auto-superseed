@@ -10,8 +10,8 @@ import os # Import the os module to access environment variables
 # QB_HOST = os.getenv('QB_HOST', 'host.docker.internal') # Default for Docker Desktop
 QB_HOST = os.getenv('QB_HOST', 'localhost') # Default for Docker Desktop
 QB_PORT = os.getenv('QB_PORT', '8080')
-QB_USERNAME = os.getenv('QB_USERNAME', '') # Default to empty string (optional)
-QB_PASSWORD = os.getenv('QB_PASSWORD', '') # Default to empty string (optional)
+QB_USERNAME = os.getenv('QB_USERNAME', 'admin') # Default username (PLEASE CHANGE)
+QB_PASSWORD = os.getenv('QB_PASSWORD', 'adminadmin') # Default password (PLEASE CHANGE)
 POLLING_INTERVAL_SECONDS = int(os.getenv('POLLING_INTERVAL_SECONDS', 120)) # Convert to int
 
 # --- Helper Function for qBittorrent API URLs ---
