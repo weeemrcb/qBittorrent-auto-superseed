@@ -154,12 +154,14 @@ def main():
                 # Rule 1: If the total number of seeds is 1 (meaning only you are seeding)
                 # and Super Seeding is NOT currently enabled, then enable it.
                 if num_seeds_total == 1 and not super_seeding_enabled:
-                    print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' has 1 total seed. Enabling Super Seeding.")
+                    print('\n')
+                    print(f"[{time.strftime('%H:%M:%S')}] Enabling Super Seeding. Torrent '{torrent_name}' has only 1 seed")
                     set_super_seeding(session, torrent_hash, True)
                 # Rule 2: If the total number of seeds is 2 or more,
                 # and Super Seeding IS currently enabled, then disable it.
                 elif num_seeds_total >= 2 and super_seeding_enabled:
-                    print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' has {num_seeds_total} total seeds. Disabling Super Seeding.")
+                    print('\n')
+                    print(f"[{time.strftime('%H:%M:%S')}] Disabling Super Seeding. Torrent '{torrent_name}' has {num_seeds_total} total seeds")
                     set_super_seeding(session, torrent_hash, False)
                 # The 'else' block for "No action needed" has been removed to reduce log verbosity.
         
