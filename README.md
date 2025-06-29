@@ -16,8 +16,6 @@ else, turn super seeding mode off
 
 ### **Prerequisites**
 
-Before you begin, ensure you have the following installed and configured:
-
 * [**Docker**](https://www.docker.com/get-started): For running the container.  
 * [**qBittorrent**](https://www.qbittorrent.org/): With the **Web UI enabled** and accessible.  
   * Go to qBittorrent Tools \> Options (or Preferences on macOS) \> Web UI.  
