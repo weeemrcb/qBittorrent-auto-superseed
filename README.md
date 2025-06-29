@@ -1,15 +1,15 @@
 # **qBittorrent Super Seeding Automation (Dockerized)**
 
 A lightweight Python script designed to automate qBittorrent's Super Seeding mode based on the number of available seeds on the torrent network.  
-If seeds \== 1 , turn super seeding mode on  
-If seeds \=> 2 , turn super seeding mode off
+If seeds \== 1 and leeches \>= 2, turn super seeding mode on  
+else, turn super seeding mode off
 
 ## **✨ Features**
 
-* **Automated Super Seeding:** Automatically enables Super Seeding for torrents where you are the sole seed (total seeds \= 1).  
-* **Automated Super Seeding Disablement:** Automatically disables Super Seeding when more seeds (total seeds 2 or more) become available.  
-* **Dockerized:** Runs in a Docker container for easy deployment.   
-* **Clean Logging:** Only logs when an action is taken (enabling/disabling Super Seeding).
+* **Automated Super Seeding:** Automatically enable Super Seeding for torrents where you are the sole seed and leechers are >=2  
+* **Automated Super Seeding Disablement:** Automatically disables Super Seeding when there are more seeds  
+* **Automated Choking Algorithm:** Toggle *Fastest Upload* or *Anti-Leech* when Super Seeding is on or off (may not work. QBT Version specific)  
+* **Clean Logging:** Only logs when an action is taken (enabling/disabling Super Seeding)  
 
 ## **🚀 Getting Started**
 
@@ -38,6 +38,9 @@ docker run -d \
   -e QB_USERNAME=MySecretUname  \
   -e QB_PASSWORD=MySecretPasswd  \
   -e POLLING_INTERVAL_SECONDS=120  \
+  -e QB_SUPER_SEED_SEED_THRESHOLD=1 \
+  -e QB_SUPER_SEED_LEECH_THRESHOLD=2 \
+  -e QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true \
 --restart unless-stopped \
 ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
 ```
@@ -55,6 +58,9 @@ services:
             - QB_USERNAME=MySecretUname
             - QB_PASSWORD=MySecretPasswd
             - POLLING_INTERVAL_SECONDS=120
+            - QB_SUPER_SEED_SEED_THRESHOLD=1
+            - QB_SUPER_SEED_LEECH_THRESHOLD=2
+            - QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true
         restart: unless-stopped
         image: ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
 
@@ -70,6 +76,9 @@ services:
 | QB_USERNAME    |`admin` |
 | QB_PASSWORD    |`adminadmin` |
 | POLLING_INTERVAL_SECONDS    | `120` [seconds] |
+| QB_SUPER_SEED_SEED_THRESHOLD    | `1` |
+| QB_SUPER_SEED_LEECH_THRESHOLD    | `2` |
+| QB_ENABLE_CHOKING_ALGORITHM_CONTROL    | `false` [true\|false] |
 | | |
 | | |
 
