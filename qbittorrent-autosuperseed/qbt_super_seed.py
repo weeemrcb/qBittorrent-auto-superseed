@@ -20,7 +20,7 @@ QB_SUPER_SEED_SEED_THRESHOLD = int(os.getenv('QB_SUPER_SEED_SEED_THRESHOLD', 1))
 
 # QB_SUPER_SEED_LEECH_THRESHOLD: The minimum number of leeches (downloaders) required
 #   for Super Seeding to be enabled, when total seeds meet the seed threshold.
-QB_SUPER_SEED_LEECH_THRESHOLD = int(os.getenv('QB_SUPER_SEED_LEECH_THRESHOLD', 2))
+QB_SUPER_SEED_LEECH_THRESHOLD = int(os.getenv('QB_SUPER_SEED_LEECH_THRESHOLD', 3))
 
 # --- New Configuration for Choking Algorithm ---
 # QB_ENABLE_CHOKING_ALGORITHM_CONTROL: Set to 'True' to enable automatic switching of the
