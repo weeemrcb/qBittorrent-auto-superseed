@@ -1,7 +1,7 @@
 # **qBittorrent Super Seeding Automation (Dockerized)**
 
 A lightweight Python script designed to automate qBittorrent's Super Seeding mode based on the number of available seeds on the torrent network.  
-If seeds \== 1 and leeches \>= 2, turn super seeding mode on  
+If seeds \== 1 and leeches \>= 3, turn super seeding mode on  
 else, turn super seeding mode off
 
 ## **✨ Features**
@@ -40,7 +40,7 @@ docker run -d \
   -e QB_PASSWORD=MySecretPasswd  \
   -e POLLING_INTERVAL_SECONDS=120  \
   -e QB_SUPER_SEED_SEED_THRESHOLD=1 \
-  -e QB_SUPER_SEED_LEECH_THRESHOLD=2 \
+  -e QB_SUPER_SEED_LEECH_THRESHOLD=3 \
   -e QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true \
 --restart unless-stopped \
 ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
@@ -60,7 +60,7 @@ services:
             - QB_PASSWORD=MySecretPasswd
             - POLLING_INTERVAL_SECONDS=120
             - QB_SUPER_SEED_SEED_THRESHOLD=1
-            - QB_SUPER_SEED_LEECH_THRESHOLD=2
+            - QB_SUPER_SEED_LEECH_THRESHOLD=3
             - QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true
         restart: unless-stopped
         image: ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
@@ -78,7 +78,7 @@ services:
 | QB_PASSWORD    |`adminadmin` |
 | POLLING_INTERVAL_SECONDS    | `120` [seconds] |
 | QB_SUPER_SEED_SEED_THRESHOLD    | `1` |
-| QB_SUPER_SEED_LEECH_THRESHOLD    | `2` |
+| QB_SUPER_SEED_LEECH_THRESHOLD    | `3` |
 | QB_ENABLE_CHOKING_ALGORITHM_CONTROL    | `false` [true\|false] |
 | | |
 | | |
