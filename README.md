@@ -8,7 +8,8 @@ else, turn super seeding mode off
 
 * **Automated Super Seeding:** Automatically enable Super Seeding for torrents where you are the sole seed and leechers are >=2  
 * **Automated Super Seeding Disablement:** Automatically disables Super Seeding when there are more seeds  
-* **Automated Choking Algorithm:** Toggle *Fastest Upload* or *Anti-Leech* when Super Seeding is on or off (may not work. QBT Version specific)  
+* **Automated Choking Algorithm:** Toggle *Fastest Upload* or *Anti-Leech* when Super Seeding is on or off (may not work. QBT Version specific)
+* **Configurable Threshold Values:** Users have the option to define their own trigger values
 * **Clean Logging:** Only logs when an action is taken (enabling/disabling Super Seeding)  
 
 ## **🚀 Getting Started**
