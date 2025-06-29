@@ -9,5 +9,7 @@ services:
             - QB_USERNAME=your_qb_webui_username
             - QB_PASSWORD=your_qb_webui_password
             - POLLING_INTERVAL_SECONDS=120
+            - QB_SUPER_SEED_SEED_THRESHOLD=1
+            - QB_SUPER_SEED_LEECH_THRESHOLD=3
         restart: unless-stopped
         image: ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
