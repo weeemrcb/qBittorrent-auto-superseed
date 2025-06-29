@@ -10,7 +10,7 @@ else, turn super seeding mode off
 * **Automated Super Seeding Disablement:** Automatically disables Super Seeding when there are more seeds  
 * **Automated Choking Algorithm:** Toggle *Fastest Upload* or *Anti-Leech* when Super Seeding is on or off (may not work. QBT Version specific)
 * **Configurable Threshold Values:** Users have the option to define their own trigger values
-* **Clean Logging:** Only logs when an action is taken (enabling/disabling Super Seeding)  
+* **Clean Logging:** Only logs when an action is taken  
 
 ## **🚀 Getting Started**
 
