@@ -190,11 +190,14 @@ def main():
                 super_seeding_enabled = torrent['super_seeding']
 
                 # Logic for Super Seeding mode
-                if num_seeds_total == QB_SUPER_SEED_SEED_THRESHOLD and num_leechers_total >= QB_SUPER_SEED_LEECH_THRESHOLD and not super_seeding_enabled:
+                if num_seeds_total <= QB_SUPER_SEED_SEED_THRESHOLD and num_leechers_total >= QB_SUPER_SEED_LEECH_THRESHOLD and not super_seeding_enabled:
                     print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' (Total Seeds: {num_seeds_total}, Leechers: {num_leechers_total}). Enabling Super Seeding.")
                     set_super_seeding(session, torrent_hash, True)
-                elif num_seeds_total >= 2 and super_seeding_enabled:
-                    print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' (Total Seeds: {num_seeds_total}, Leechers: {num_leechers_total}). Disabling Super Seeding.")
+                elif num_seeds_total > QB_SUPER_SEED_SEED_THRESHOLD and super_seeding_enabled:
+                    print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' (Total Seeds: {num_seeds_total}. Disabling Super Seeding.")
+                    set_super_seeding(session, torrent_hash, False)
+                elif num_leechers_total < QB_SUPER_SEED_LEECH_THRESHOLD and super_seeding_enabled:
+                    print(f"[{time.strftime('%H:%M:%S')}] Torrent '{torrent_name}' (Total Leechers: {num_leechers_total}). Disabling Super Seeding.")
                     set_super_seeding(session, torrent_hash, False)
                 
                 # Check if this superseeding torrent is actively uploading for choking algorithm logic
