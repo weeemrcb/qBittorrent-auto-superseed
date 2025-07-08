@@ -1,7 +1,7 @@
 # **qBittorrent Super Seeding Automation (Dockerized)**
 
 A lightweight Python script designed to automate qBittorrent's Super Seeding mode based on the number of available seeds on the torrent network.  
-If seeds \== 1 and leeches \>= 3, turn super seeding mode on  
+If seeds \<= 1 and leeches \>= 3, turn super seeding mode on  
 else, turn super seeding mode off
 
 ## **✨ Features**
