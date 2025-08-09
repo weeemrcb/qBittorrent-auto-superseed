@@ -185,7 +185,9 @@ def main():
                 torrent_hash = torrent['hash']
                 
                 num_seeds_total = torrent['num_complete']
-                num_leechers_total = torrent['num_incomplete']
+#               Wrong value ['num_incomplete']. Should be ['num_leechs']
+#               num_leechers_total = torrent['num_incomplete']
+                num_leechers_total = torrent['num_leechs']
                 
                 super_seeding_enabled = torrent['super_seeding']
 
