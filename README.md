@@ -20,13 +20,13 @@ else, turn super seeding mode off
 * [**qBittorrent**](https://www.qbittorrent.org/): With the **Web UI enabled** and accessible.  
   * Go to qBittorrent Tools \> Options (or Preferences on macOS) \> Web UI.  
   * Check Enable Web User Interface (Remote Control) and note down the Listen port (default is often 8080 or 9090).  
-  * If you set a Username and Password, you'll need them for the script.
+  * If you set a Username and Password, you'll need them for the script.  
   * Alternatively, if you set "Bypass authentication for clients in whitelisted IP subnets", you won't need any uname/password
 
 ### **Notes**
 It's recommended to set the polling interval to at least 6 minutes.  
 When super-seeding is activated it will slowly halt current shares. Once idle it takes a minute or two for the seed to pick-up and resume.  
-If the polling interval is too short it'll keep toggling it on > off > on > off ...
+If the polling interval is too short it'll keep toggling it on > off > on > off ...  
 The constant toggling will keep stalling seeding making it harder to share.  
 
 ### **1\. Run the Docker Container**
