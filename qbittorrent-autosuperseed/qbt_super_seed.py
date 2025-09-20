@@ -10,7 +10,7 @@ QB_HOST = os.getenv('QB_HOST', 'host.docker.internal')
 QB_PORT = os.getenv('QB_PORT', '8080')
 QB_USERNAME = os.getenv('QB_USERNAME', '')
 QB_PASSWORD = os.getenv('QB_PASSWORD', '')
-POLLING_INTERVAL_SECONDS = int(os.getenv('POLLING_INTERVAL_SECONDS', 60))
+POLLING_INTERVAL_SECONDS = int(os.getenv('POLLING_INTERVAL_SECONDS', 600))
 
 # Super Seeding activation thresholds
 # QB_SUPER_SEED_SEED_THRESHOLD: The number of total seeds at which to consider enabling Super Seeding.
