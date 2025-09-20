@@ -23,6 +23,12 @@ else, turn super seeding mode off
   * If you set a Username and Password, you'll need them for the script.
   * Alternatively, if you set "Bypass authentication for clients in whitelisted IP subnets", you won't need any uname/password
 
+### **Notes**
+It's recommended to set the polling interval to at least 6 minutes.  
+When super-seeding is activated it will slowly halt current shares. Once idle it takes a minute or two for the seed to pick-up and resume.  
+If the polling interval is too short it'll keep toggling it on > off > on > off ...
+The constant toggling will keep stalling seeding making it harder to share.  
+
 ### **1\. Run the Docker Container**
 
 You'll likely need `--network=host` to allow the container to access localhost on the docker host.  
@@ -36,7 +42,7 @@ docker run -d \
   -e QB_PORT=8080  \
   -e QB_USERNAME=MySecretUname  \
   -e QB_PASSWORD=MySecretPasswd  \
-  -e POLLING_INTERVAL_SECONDS=120  \
+  -e POLLING_INTERVAL_SECONDS=600  \
   -e QB_SUPER_SEED_SEED_THRESHOLD=1 \
   -e QB_SUPER_SEED_LEECH_THRESHOLD=3 \
   -e QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true \
@@ -56,7 +62,7 @@ services:
             - QB_PORT=8080
             - QB_USERNAME=MySecretUname
             - QB_PASSWORD=MySecretPasswd
-            - POLLING_INTERVAL_SECONDS=120
+            - POLLING_INTERVAL_SECONDS=600
             - QB_SUPER_SEED_SEED_THRESHOLD=1
             - QB_SUPER_SEED_LEECH_THRESHOLD=3
             - QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true
