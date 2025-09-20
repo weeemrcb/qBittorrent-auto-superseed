@@ -80,7 +80,7 @@ services:
 | QB_PORT | `8080` |
 | QB_USERNAME    |`admin` |
 | QB_PASSWORD    |`adminadmin` |
-| POLLING_INTERVAL_SECONDS    | `120` [seconds] |
+| POLLING_INTERVAL_SECONDS    | `600` [seconds] |
 | QB_SUPER_SEED_SEED_THRESHOLD    | `1` |
 | QB_SUPER_SEED_LEECH_THRESHOLD    | `3` |
 | QB_ENABLE_CHOKING_ALGORITHM_CONTROL    | `false` [true\|false] |
