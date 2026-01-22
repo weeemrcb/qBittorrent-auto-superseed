@@ -1,5 +1,19 @@
 # Use an official Python runtime as a base image
-FROM python:3.9-slim-buster
+
+# Specific image
+# FROM python:3.9-slim-buster
+
+# Latest within version
+# FROM python:3
+
+# Latest for specific distibution
+# FROM python:slim
+
+# Latest
+# FROM python:latest
+
+# Use latest slim
+FROM python:slim
 
 # Set the working directory in the container
 WORKDIR /app
