@@ -3,6 +3,9 @@ import time
 import sys
 import os
 
+# --- Release ---
+VERSION = "1.0.13"
+
 # --- Configuration ---
 # Read configuration from environment variables.
 # Provide default values if environment variables are not set.
