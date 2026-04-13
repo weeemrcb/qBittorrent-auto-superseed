@@ -53,7 +53,7 @@ Peer #4 only needed 34mb from the seed source and pulled over 45% (6gb) of the t
 Sample 12Gb+ Seed  
 <img width="975" height="55" alt="image" src="https://github.com/user-attachments/assets/c895f4e1-1e29-46cc-8db3-85f67249d49b" />
 
-Connected Peers
+Connected Peers  
 <img width="835" height="185" alt="image" src="https://github.com/user-attachments/assets/29742364-2c0b-44d7-a3e4-200f78253e7f" />
 
 ___
