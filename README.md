@@ -45,7 +45,7 @@ docker run -d \
   -e POLLING_INTERVAL_SECONDS=600  \
   -e QB_SUPER_SEED_SEED_THRESHOLD=1 \
   -e QB_SUPER_SEED_LEECH_THRESHOLD=3 \
-  -e QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true \
+  -e QB_ENABLE_CHOKING_ALGORITHM_CONTROL=false \
 --restart unless-stopped \
 ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
 ```
@@ -65,7 +65,7 @@ services:
             - POLLING_INTERVAL_SECONDS=600
             - QB_SUPER_SEED_SEED_THRESHOLD=1
             - QB_SUPER_SEED_LEECH_THRESHOLD=3
-            - QB_ENABLE_CHOKING_ALGORITHM_CONTROL=true
+            - QB_ENABLE_CHOKING_ALGORITHM_CONTROL=false
         restart: unless-stopped
         image: ghcr.io/weeemrcb/qbittorrent-autosuperseed:latest
 
