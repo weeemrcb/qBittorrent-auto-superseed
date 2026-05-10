@@ -4,7 +4,7 @@ import sys
 import os
 
 # --- Release ---
-VERSION = "1.0.14"
+VERSION = "1.0.15"
 
 # --- Configuration ---
 # Read configuration from environment variables.
@@ -58,7 +58,7 @@ def login(session, username, password):
         response = session.post(login_url, data=payload)
         response.raise_for_status()
 
-        if response.status_code in [200, 204]:
+        if response.status_code in [200, 201, 203, 204, 205, 206, 207, 208]:
             if username and password and 'sid' not in session.cookies:
                 print("Login failed: Credentials provided but no session cookie received. Please check your username and password.")
                 return False
