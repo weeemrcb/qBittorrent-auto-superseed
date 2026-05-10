@@ -4,7 +4,7 @@ import sys
 import os
 
 # --- Release ---
-VERSION = "1.0.13"
+VERSION = "1.0.14"
 
 # --- Configuration ---
 # Read configuration from environment variables.
@@ -58,8 +58,8 @@ def login(session, username, password):
         response = session.post(login_url, data=payload)
         response.raise_for_status()
 
-        if response.status_code == 200:
-            if username and password and 'Set-Cookie' not in response.headers:
+        if response.status_code in [200, 204]:
+            if username and password and 'sid' not in session.cookies:
                 print("Login failed: Credentials provided but no session cookie received. Please check your username and password.")
                 return False
             print("Successfully logged into qBittorrent (or no authentication required).")
