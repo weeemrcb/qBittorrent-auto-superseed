@@ -1,8 +1,10 @@
 # **qBittorrent Super Seeding Automation (Dockerized)**
 
-A lightweight Python script designed to automate qBittorrent's Super Seeding mode based on the number of available seeds on the torrent network.  
-If seeds \<= 1 and leeches \>= 3, turn super seeding mode on  
-else, turn super seeding mode off
+A lightweight Python script designed to automate qBittorrent's Super Seeding mode   
+based on the number of available seeds on the torrent network.  
+
+If seeds \<= 1 and leeches \>= 3, turn super seeding mode ON  
+Else, turn super seeding mode OFF
 
 ## **✨ Features**
 
@@ -12,7 +14,7 @@ else, turn super seeding mode off
 * **Configurable Threshold Values:** Users have the option to define their own trigger values
 * **Clean Logging:** Only logs when an action is taken  
 
-## **🚀 Getting Started**
+## **👉 Getting Started**
 
 ### **Prerequisites**
 
@@ -22,13 +24,16 @@ else, turn super seeding mode off
   * Check Enable Web User Interface (Remote Control) and note down the Listen port (default is often 8080 or 9090).  
   * If you set a Username and Password, you'll need them for the script.  
   * Alternatively, if you set "Bypass authentication for clients in whitelisted IP subnets", you won't need any uname/password
-
-### **Notes**
-It's recommended to set the polling interval to at least 6 minutes.  
-When super-seeding is activated it will slowly halt current shares. Once idle it takes a minute or two for the seed to pick-up and resume.  
-If the polling interval is too short it'll keep toggling it on > off > on > off ...  
-The constant toggling will keep stalling seeding making it harder to share.  
-
+---
+> [!WARNING]
+> It's recommended to set the polling interval to be **at least 6 minutes**.
+>  
+> When super-seeding is activated, it will slowly halt current shares.  
+> Once idle it'll take a couple minutes for the seed to reconnect and resume.
+> 
+> If the polling interval is too short it'll keep toggling it: ON > OFF > ON > OFF etc...  
+> The constant toggling will keep stalling your seed making it harder to share.  
+---
 ### **1\. Run the Docker Container**
 
 You'll likely need `--network=host` to allow the container to access localhost on the docker host.  
@@ -89,7 +94,7 @@ services:
 
 
 
-## 🧠 **Container Logic**
+## 💭 **Container Logic**
 
 **Seed Count Logic:**  
 The script uses a torrent's \['num\_complete'\] from the qBittorrent API to determine the "seed number".  
