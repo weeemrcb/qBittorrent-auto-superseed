@@ -4,7 +4,7 @@ import sys
 import os
 
 # --- Release ---
-VERSION = "1.0.15"
+VERSION = "1.0.16"
 
 # --- Configuration ---
 # Read configuration from environment variables.

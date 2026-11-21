@@ -13,6 +13,7 @@
 # FROM python:latest
 
 # Use latest slim
+# docker buildx imagetools inspect python:slim | grep -i version
 FROM python:slim
 
 # Set the working directory in the container
